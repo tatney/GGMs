@@ -1,12 +1,12 @@
 # Dependencies
 node_modules/
 
-# Environment & secrets
+# Environment & secrets (keep .env.example as the template)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# Vercel
+# Vercel build/link files
 .vercel/
 
 # Old SQLite database (migrated to Supabase)
@@ -15,6 +15,7 @@ backend/ggm.db
 # Logs
 *.log
 npm-debug.log*
+yarn-error.log*
 
 # OS
 .DS_Store
@@ -23,3 +24,4 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+*.swp
