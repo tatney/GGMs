@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta name="theme-color" content="#1E293B"/>
+<title>Connect | God's Gospel Ministries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: "#1E293B", "primary-container": "#334155", "primary-dark": "#0F172A",
+"primary-light": "#E2E8F0", "primary-fixed-dim": "#a5c8ff",
+accent: "#3B82F6", "accent-light": "#DBEAFE", "accent-dark": "#2563EB",
+holy: "#3B82F6", "holy-light": "#DBEAFE", "holy-dark": "#2563EB",
+surface: "#FFFFFF", "on-surface": "#121c2a", "on-surface-variant": "#414751",
+"surface-container": "#F1F5F9", "surface-container-high": "#E2E8F0",
+"surface-alt": "#F1F5F9", outline: "#727782", "outline-variant": "#c1c6d3", muted: "#64748B",
+},
+fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" },
+},
+},
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+.material-symbols-outlined{font-variation-settings:'FILL'0,'wght'500,'GRAD'0,'opsz'24;vertical-align:middle;font-size:1.25em}
+body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#121c2a;-webkit-font-smoothing:antialiased}
+*:focus-visible{outline:2px solid #1E293B;outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;top:-40px;left:0;z-index:100;padding:8px 16px;background:#1E293B;color:#fff;font-size:14px;transition:top .2s}
+.skip-link:focus{top:0;outline:2px solid #3B82F6;outline-offset:2px}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.show{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){.reveal,.reveal.show{opacity:1;transform:none;transition:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div id="top-bar-placeholder"></div>
+
+<!-- MAIN NAV -->
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-between h-14 md:h-16">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-lg shadow-accent/20 flex-shrink-0">
+<span class="material-symbols-outlined text-primary-dark text-xl md:text-2xl">church</span>
+</div>
+<span class="font-bold text-sm md:text-lg tracking-tight text-primary">God's Gospel Ministries</span>
+</div>
+<nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+<a href="index.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Home</a>
+<div class="relative group">
+<button class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-primary-light text-primary font-bold flex items-center gap-1 cursor-pointer">
+Connect
+<svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+</button>
+<div class="absolute top-full left-0 mt-1.5 w-56 bg-white rounded-2xl shadow-2xl shadow-black/10 border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">auto_awesome</span></div>
+<div><p class="font-medium text-on-surface">Prayer Request</p><p class="text-xs text-on-surface-variant">Share your burdens with us</p></div>
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">psychology</span></div>
+<div><p class="font-medium text-on-surface">Counselling</p><p class="text-xs text-on-surface-variant">Get pastoral guidance</p></div>
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">volunteer_activism</span></div>
+<div><p class="font-medium text-on-surface">Testimonies</p><p class="text-xs text-on-surface-variant">Share what God has done</p></div>
+</a>
+</div>
+</div>
+<a href="events.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Events</a>
+<a href="give.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Give</a>
+<a href="about.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">About</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="connect.html" class="hidden sm:inline-flex items-center gap-2 bg-accent text-on-surface px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-bold text-xs md:text-sm hover:bg-accent-dark transition-all shadow-lg shadow-accent/20 active:scale-95">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+Connect
+</a>
+<button class="lg:hidden relative w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="menu-btn" aria-label="Menu" aria-expanded="false">
+<div class="w-5 h-4 flex flex-col justify-between" id="menu-icon">
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300 origin-center" id="menu-line-1"></span>
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300" id="menu-line-2"></span>
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300 origin-center" id="menu-line-3"></span>
+</div>
+</button>
+</div>
+</div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm opacity-0 invisible transition-all duration-300" id="drawer-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 ease-out" id="drawer">
+<div class="flex items-center justify-between p-4 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center"><span class="material-symbols-outlined text-primary-dark text-lg">church</span></div>
+<span class="font-bold text-sm text-primary">Menu</span>
+</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="drawer-close">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1 overflow-y-auto" style="height:calc(100% - 60px - 76px)">
+<a href="index.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">home</span></div>
+Home
+</a>
+<div class="px-4 py-2 mt-2">
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Connect</p>
+</div>
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm bg-primary-light text-primary font-medium ml-3">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white flex-shrink-0"><span class="material-symbols-outlined">auto_awesome</span></div>
+Prayer Request
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark flex-shrink-0"><span class="material-symbols-outlined">psychology</span></div>
+Counselling
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy flex-shrink-0"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Testimonies
+</a>
+<div class="border-t border-outline-variant my-3"></div>
+<a href="events.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">event</span></div>
+Events
+</a>
+<a href="give.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Give
+</a>
+<a href="about.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">info</span></div>
+About
+</a>
+</div>
+</div>
+
+<main id="main-content">
+<!-- Hero -->
+<section class="relative min-h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0">
+<div class="absolute inset-0 transition-opacity duration-1000" id="connect-hero-0">
+<img src="Imgs/prayer%201.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+<div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="connect-hero-1">
+<img src="Imgs/prayer%202.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+<div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="connect-hero-2">
+<img src="Imgs/hero%20image%201.jpeg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 pointer-events-none"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 md:px-10 w-full py-16">
+<div class="max-w-2xl">
+<span class="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent px-3 py-1 rounded-full text-xs font-bold mb-4">GET CONNECTED</span>
+<h1 class="text-white font-extrabold text-4xl md:text-5xl lg:text-6xl mb-4">We're Here for <span class="text-accent">You</span></h1>
+<p class="text-white/80 text-lg mb-8">Whether you need prayer, counselling, or want to share what God is doing in your life — we'd love to hear from you.</p>
+</div>
+</div>
+</section>
+
+<!-- Service Cards -->
+<div class="max-w-7xl mx-auto px-4 md:px-10 -mt-12 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<button class="group relative bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all text-left flex flex-col gap-4 reveal" onclick="scrollToForm('prayer-form')">
+<div class="w-14 h-14 rounded-full bg-primary-light flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl fill-1">auto_awesome</span>
+</div>
+<h3 class="font-bold text-xl text-on-surface">Prayer Request</h3>
+<p class="text-on-surface-variant text-sm">Share your burdens and praises with our intercessory prayer team.</p>
+<div class="mt-auto flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+Submit Request <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</button>
+<button class="group relative bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all text-left flex flex-col gap-4 reveal reveal-delay-1" onclick="scrollToForm('counselling-form')">
+<div class="w-14 h-14 rounded-full bg-accent-light flex items-center justify-center text-accent-dark">
+<span class="material-symbols-outlined text-3xl fill-1">psychology</span>
+</div>
+<h3 class="font-bold text-xl text-on-surface">Counselling</h3>
+<p class="text-on-surface-variant text-sm">Request a session with our pastoral care team for guidance and support.</p>
+<div class="mt-auto flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+Schedule Session <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</button>
+<button class="group relative bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all text-left flex flex-col gap-4 reveal reveal-delay-2" onclick="scrollToForm('testimony-form')">
+<div class="w-14 h-14 rounded-full bg-holy-light flex items-center justify-center text-holy">
+<span class="material-symbols-outlined text-3xl fill-1">volunteer_activism</span>
+</div>
+<h3 class="font-bold text-xl text-on-surface">Testimonies</h3>
+<p class="text-on-surface-variant text-sm">Encourage others by sharing how God is moving in your life today.</p>
+<div class="mt-auto flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+Share Story <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+
+<!-- Forms -->
+<div class="max-w-7xl mx-auto px-4 md:px-10 pb-16">
+<div class="space-y-10">
+<!-- Prayer Request -->
+<section class="bg-white rounded-2xl p-6 md:p-10 border border-outline-variant shadow-sm scroll-mt-24 reveal" id="prayer-form" aria-label="Prayer request form">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center"><span class="material-symbols-outlined text-primary text-2xl fill-1">auto_awesome</span></div>
+<h2 class="text-2xl font-bold text-on-surface">Prayer Request</h2>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-5" onsubmit="handleSubmit(event, 'prayer-success', 'prayer')">
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="prayer-name">Full Name</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Enter your name" required type="text" name="name" id="prayer-name"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="prayer-email">Email Address</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="email@example.com" required type="email" name="email" id="prayer-email"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="prayer-phone">Phone Number (Optional)</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="+256 700 000 000" type="tel" name="phone" id="prayer-phone"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="prayer-category">Prayer Category</label>
+<select class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" name="category" id="prayer-category">
+<option>Healing & Health</option>
+<option>Family & Relationships</option>
+<option>Finances & Career</option>
+<option>Spiritual Growth</option>
+<option>Deliverance</option>
+<option>Other</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-semibold text-sm text-on-surface-variant" for="prayer-message">Prayer Request</label>
+<textarea class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Share your prayer request..." required rows="5" name="message" id="prayer-message"></textarea>
+</div>
+<div class="md:col-span-2 flex justify-end mt-2">
+<button class="bg-gradient-to-br from-primary to-primary-dark text-white px-8 md:px-10 py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all flex items-center gap-2 shadow-md active:scale-95" type="submit">
+<span class="material-symbols-outlined">auto_awesome</span> Submit Prayer Request
+</button>
+</div>
+</form>
+<div class="hidden mt-6 p-5 bg-primary-light text-primary rounded-xl border border-primary/30 text-center" id="prayer-success" role="status">
+Your prayer request has been received. Our team will be praying for you.
+</div>
+</section>
+
+<!-- Counselling -->
+<section class="bg-white rounded-2xl p-6 md:p-10 border border-outline-variant shadow-sm scroll-mt-24 reveal" id="counselling-form" aria-label="Counselling request form">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center"><span class="material-symbols-outlined text-accent-dark text-2xl fill-1">psychology</span></div>
+<h2 class="text-2xl font-bold text-on-surface">Counselling Request</h2>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-5" onsubmit="handleSubmit(event, 'counselling-success', 'counselling')">
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="counsel-name">Full Name</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Enter your name" required type="text" name="name" id="counsel-name"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="counsel-email">Email Address</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="email@example.com" required type="email" name="email" id="counsel-email"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="counsel-phone">Phone Number</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="+256 700 000 000" required type="tel" name="phone" id="counsel-phone"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="counsel-date">Preferred Date</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" required type="date" name="date" id="counsel-date"/>
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-semibold text-sm text-on-surface-variant" for="counsel-message">Topic for Discussion</label>
+<textarea class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Briefly describe what you'd like to talk about..." required rows="5" name="message" id="counsel-message"></textarea>
+</div>
+<div class="md:col-span-2 flex justify-end mt-2">
+<button class="bg-gradient-to-br from-primary to-primary-dark text-white px-8 md:px-10 py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all flex items-center gap-2 shadow-md active:scale-95" type="submit">
+<span class="material-symbols-outlined">event_available</span> Schedule Counselling
+</button>
+</div>
+</form>
+<div class="hidden mt-6 p-5 bg-accent-light text-accent-dark rounded-xl border border-accent/30 text-center" id="counselling-success" role="status">
+Counselling request submitted. A pastoral staff member will contact you shortly.
+</div>
+</section>
+
+<!-- Testimonies -->
+<section class="bg-white rounded-2xl p-6 md:p-10 border border-outline-variant shadow-sm scroll-mt-24 reveal" id="testimony-form" aria-label="Testimony submission form">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-xl bg-holy-light flex items-center justify-center"><span class="material-symbols-outlined text-holy text-2xl fill-1">volunteer_activism</span></div>
+<h2 class="text-2xl font-bold text-on-surface">Share Your Testimony</h2>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-5" onsubmit="handleSubmit(event, 'testimony-success', 'testimony')">
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="test-name">Full Name</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Enter your name" required type="text" name="name" id="test-name"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="test-email">Email Address</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="email@example.com" required type="email" name="email" id="test-email"/>
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-semibold text-sm text-on-surface-variant" for="test-title">Title of Your Testimony</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Give your story a title" required type="text" name="title" id="test-title"/>
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-semibold text-sm text-on-surface-variant" for="test-message">Your Testimony</label>
+<textarea class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="What did God do? How has your life changed?" required rows="6" name="message" id="test-message"></textarea>
+</div>
+<div class="md:col-span-2 flex justify-end mt-2">
+<button class="bg-gradient-to-br from-primary to-primary-dark text-white px-8 md:px-10 py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all flex items-center gap-2 shadow-md active:scale-95" type="submit">
+<span class="material-symbols-outlined">volunteer_activism</span> Submit Testimony
+</button>
+</div>
+</form>
+<div class="hidden mt-6 p-5 bg-holy-light text-holy rounded-xl border border-holy/30 text-center" id="testimony-success" role="status">
+Thank you for sharing your story! It has been submitted for review and will encourage many.
+</div>
+</section>
+</div>
+</div>
+
+<!-- Newsletter CTA -->
+<section class="bg-gradient-to-r from-primary via-primary-dark to-primary py-16 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10"><div class="absolute top-10 left-10 w-40 h-40 bg-accent rounded-full blur-3xl"></div><div class="absolute bottom-10 right-10 w-60 h-60 bg-holy rounded-full blur-3xl"></div></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 md:px-10 text-center">
+<h2 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Stay Connected With Us</h2>
+<p class="text-white/80 max-w-2xl mx-auto mb-8">Join our mailing list to receive updates on events, prayer alerts, and ministry news.</p>
+<form class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Subscribed!');">
+<input class="w-full px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white focus:outline-none" placeholder="Enter your email address" type="email" required/>
+<button class="bg-accent text-on-surface px-8 py-3.5 rounded-xl font-bold shadow-lg hover:bg-accent-dark transition-all active:scale-95" type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+function scrollToForm(id) {
+const el = document.getElementById(id);
+if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+function handleSubmit(event, successId, formType) {
+event.preventDefault();
+const form = event.target;
+const formData = new FormData(form);
+const data = {};
+formData.forEach((value, key) => { data[key] = value; });
+data.type = formType;
+
+const btn = form.querySelector('button[type="submit"]');
+const originalHtml = btn.innerHTML;
+btn.disabled = true;
+btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Sending...';
+
+API.submitForm(data).then(() => {
+form.classList.add('hidden');
+const successEl = document.getElementById(successId);
+successEl.classList.remove('hidden');
+successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}).catch(err => {
+console.error('Form submission failed:', err);
+btn.disabled = false;
+btn.innerHTML = originalHtml;
+alert('Submission failed. Please try again.');
+});
+}
+
+fetch('/components/top-bar.html').then(r => r.text()).then(h => {
+document.getElementById('top-bar-placeholder').innerHTML = h;
+if (window.footerLoaded) window.footerLoaded();
+});
+fetch('/components/footer.html').then(r => r.text()).then(h => {
+document.getElementById('footer-placeholder').innerHTML = h;
+document.querySelectorAll('.reveal').forEach(el => {
+if (window.revealObserver) window.revealObserver.observe(el);
+});
+window.footerLoaded = true;
+});
+
+window.revealObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+window.revealObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => window.revealObserver.observe(el));
+
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('drawer-close');
+const drawer = document.getElementById('drawer');
+const overlay = document.getElementById('drawer-overlay');
+function openDrawer() { drawer.classList.remove('translate-x-full'); overlay.classList.remove('opacity-0', 'invisible'); document.body.style.overflow = 'hidden'; menuBtn.setAttribute('aria-expanded', 'true'); }
+function closeDrawerFn() { drawer.classList.add('translate-x-full'); overlay.classList.add('opacity-0', 'invisible'); document.body.style.overflow = ''; menuBtn.setAttribute('aria-expanded', 'false'); }
+menuBtn.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawerFn);
+overlay.addEventListener('click', closeDrawerFn);
+
+let connectSlide = 0;
+setInterval(() => {
+connectSlide = (connectSlide + 1) % 3;
+document.getElementById('connect-hero-0').style.opacity = connectSlide === 0 ? '1' : '0';
+document.getElementById('connect-hero-1').style.opacity = connectSlide === 1 ? '1' : '0';
+document.getElementById('connect-hero-2').style.opacity = connectSlide === 2 ? '1' : '0';
+}, 5000);
+</script>
+
+<script src="/api.js"></script>
+</body>
+</html>

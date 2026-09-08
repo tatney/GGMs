@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel/
+
+# Old SQLite database (migrated to Supabase)
+backend/ggm.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

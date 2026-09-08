@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta name="theme-color" content="#1E293B"/>
+<title>Events | God's Gospel Ministries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: "#1E293B", "primary-container": "#334155", "primary-dark": "#0F172A",
+"primary-light": "#E2E8F0", "primary-fixed-dim": "#a5c8ff",
+accent: "#3B82F6", "accent-light": "#DBEAFE", "accent-dark": "#2563EB",
+holy: "#3B82F6", "holy-light": "#DBEAFE", "holy-dark": "#2563EB",
+surface: "#FFFFFF", "on-surface": "#121c2a", "on-surface-variant": "#414751",
+"surface-container": "#F1F5F9", "surface-container-high": "#E2E8F0",
+"surface-alt": "#F1F5F9", outline: "#727782", "outline-variant": "#c1c6d3", muted: "#64748B",
+},
+fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" },
+},
+},
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+.material-symbols-outlined{font-variation-settings:'FILL'0,'wght'500,'GRAD'0,'opsz'24;vertical-align:middle;font-size:1.25em}
+body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#121c2a;-webkit-font-smoothing:antialiased}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+.line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.show{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+*:focus-visible{outline:2px solid #1E293B;outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;top:-40px;left:0;z-index:100;padding:8px 16px;background:#1E293B;color:#fff;font-size:14px;transition:top .2s}
+.skip-link:focus{top:0;outline:2px solid #3B82F6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.reveal,.reveal.show{opacity:1;transform:none;transition:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div id="top-bar-placeholder"></div>
+
+<!-- MAIN NAV -->
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-between h-14 md:h-16">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-lg shadow-accent/20 flex-shrink-0">
+<span class="material-symbols-outlined text-primary-dark text-xl md:text-2xl">church</span>
+</div>
+<span class="font-bold text-sm md:text-lg tracking-tight text-primary">God's Gospel Ministries</span>
+</div>
+<nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+<a href="index.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Home</a>
+<div class="relative group">
+<button class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light flex items-center gap-1 cursor-pointer">
+Connect
+<svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+</button>
+<div class="absolute top-full left-0 mt-1.5 w-56 bg-white rounded-2xl shadow-2xl shadow-black/10 border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">auto_awesome</span></div>
+<div><p class="font-medium text-on-surface">Prayer Request</p><p class="text-xs text-on-surface-variant">Share your burdens with us</p></div>
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">psychology</span></div>
+<div><p class="font-medium text-on-surface">Counselling</p><p class="text-xs text-on-surface-variant">Get pastoral guidance</p></div>
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">volunteer_activism</span></div>
+<div><p class="font-medium text-on-surface">Testimonies</p><p class="text-xs text-on-surface-variant">Share what God has done</p></div>
+</a>
+</div>
+</div>
+<a href="events.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-primary-light text-primary font-bold">Events</a>
+<a href="give.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Give</a>
+<a href="about.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">About</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="connect.html" class="hidden sm:inline-flex items-center gap-2 bg-accent text-on-surface px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-bold text-xs md:text-sm hover:bg-accent-dark transition-all shadow-lg shadow-accent/20 active:scale-95">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+Connect
+</a>
+<button class="lg:hidden relative w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="menu-btn" aria-label="Menu" aria-expanded="false">
+<div class="w-5 h-4 flex flex-col justify-between" id="menu-icon">
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300 origin-center" id="menu-line-1"></span>
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300" id="menu-line-2"></span>
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300 origin-center" id="menu-line-3"></span>
+</div>
+</button>
+</div>
+</div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm opacity-0 invisible transition-all duration-300" id="drawer-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 ease-out" id="drawer">
+<div class="flex items-center justify-between p-4 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center"><span class="material-symbols-outlined text-primary-dark text-lg">church</span></div>
+<span class="font-bold text-sm text-primary">Menu</span>
+</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="drawer-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1 overflow-y-auto" style="height:calc(100% - 60px - 76px)">
+<a href="index.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">home</span></div>
+Home
+</a>
+<div class="px-4 py-2 mt-2">
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Connect</p>
+</div>
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary flex-shrink-0"><span class="material-symbols-outlined">auto_awesome</span></div>
+Prayer Request
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark flex-shrink-0"><span class="material-symbols-outlined">psychology</span></div>
+Counselling
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy flex-shrink-0"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Testimonies
+</a>
+<div class="border-t border-outline-variant my-3"></div>
+<a href="events.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium bg-primary-light text-primary">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined">event</span></div>
+Events
+</a>
+<a href="give.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Give
+</a>
+<a href="about.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">info</span></div>
+About
+</a>
+</div>
+</div>
+
+<main id="main-content">
+<!-- Hero -->
+<section class="relative min-h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0">
+<div class="absolute inset-0 transition-opacity duration-1000" id="event-hero-slide-0">
+<img src="Imgs/prayer%203.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.6)"/>
+</div>
+<div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="event-hero-slide-1">
+<img src="Imgs/counselling.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.6)"/>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 pointer-events-none"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 md:px-10 w-full py-16">
+<div class="max-w-2xl">
+<span class="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent px-3 py-1 rounded-full text-xs font-bold mb-4">UPCOMING EVENTS</span>
+<h1 class="text-white font-extrabold text-4xl md:text-5xl lg:text-6xl mb-4">Join Us in <span class="text-accent">Community</span></h1>
+<p class="text-white/80 text-lg mb-8">Discover meaningful ways to connect, grow, and experience God's power together.</p>
+</div>
+</div>
+</section>
+
+<!-- Filter Bar -->
+<section class="bg-white border-b border-outline-variant sticky top-14 md:top-16 z-40">
+<div class="max-w-7xl mx-auto px-4 md:px-10 py-4 flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm bg-surface" placeholder="Search events..." type="text" id="event-search"/>
+</div>
+<div class="flex gap-2 overflow-x-auto w-full md:w-auto pb-1 no-scrollbar" id="filter-buttons">
+<button class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap filter-btn active-filter" data-filter="all">All Events</button>
+<button class="bg-surface-container text-on-surface px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-outline-variant transition-colors filter-btn" data-filter="Worship">Worship</button>
+<button class="bg-surface-container text-on-surface px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-outline-variant transition-colors filter-btn" data-filter="Prayer">Prayer</button>
+<button class="bg-surface-container text-on-surface px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-outline-variant transition-colors filter-btn" data-filter="Youth">Youth</button>
+<button class="bg-surface-container text-on-surface px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-outline-variant transition-colors filter-btn" data-filter="Outreach">Outreach</button>
+<button class="bg-surface-container text-on-surface px-5 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-outline-variant transition-colors filter-btn" data-filter="Revival">Revival</button>
+</div>
+</div>
+</section>
+
+<!-- Events Grid -->
+<section class="max-w-7xl mx-auto px-4 md:px-10 py-12">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-2xl md:text-3xl font-extrabold text-on-surface">All Events</h2>
+<p class="text-on-surface-variant text-sm mt-1" id="event-count">Loading events...</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="events-grid" role="status">
+<!-- Populated by JS -->
+</div>
+</section>
+
+<!-- Newsletter CTA -->
+<section class="bg-gradient-to-r from-primary via-primary-dark to-primary py-16 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10"><div class="absolute top-10 left-10 w-40 h-40 bg-accent rounded-full blur-3xl"></div><div class="absolute bottom-10 right-10 w-60 h-60 bg-holy rounded-full blur-3xl"></div></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 md:px-10 text-center">
+<h2 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Never Miss a Moment</h2>
+<p class="text-white/80 max-w-2xl mx-auto mb-8">Stay connected with our weekly events newsletter and be part of everything God is doing.</p>
+<form class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Subscribed!');">
+<label for="newsletter-email" class="sr-only">Email</label>
+<input class="w-full px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white focus:outline-none" placeholder="Enter your email address" type="email" id="newsletter-email" required/>
+<button class="bg-accent text-on-surface px-8 py-3.5 rounded-xl font-bold shadow-lg hover:bg-accent-dark transition-all active:scale-95" type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+fetch('/components/top-bar.html').then(r => r.text()).then(h => {
+document.getElementById('top-bar-placeholder').innerHTML = h;
+if (window.footerLoaded) window.footerLoaded();
+});
+fetch('/components/footer.html').then(r => r.text()).then(h => {
+document.getElementById('footer-placeholder').innerHTML = h;
+document.querySelectorAll('.reveal').forEach(el => {
+if (window.revealObserver) window.revealObserver.observe(el);
+});
+window.footerLoaded = true;
+});
+</script>
+
+<script src="/api.js"></script>
+
+<script>
+const defaultEvents = [
+{ title: "Sunday Worship Service", date: "Every Sunday", time: "10:00 AM", location: "Bufumbanswa", category: "Worship", image: "/Imgs/counselling.jpg", description: "Join us for a powerful time of worship, prayer, and the Word of God." },
+{ title: "Mid-Week Prayer Meeting", date: "Every Wednesday", time: "6:00 PM", location: "Bufumbanswa", category: "Prayer", image: "/Imgs/prayer%201.jpg", description: "Experience the power of corporate prayer as we seek God together." },
+{ title: "Friday Revival Night", date: "Every Friday", time: "5:00 PM", location: "Bufumbanswa", category: "Revival", image: "/Imgs/prayer%202.jpg", description: "A night of intense worship, deliverance, and the move of the Holy Spirit." },
+{ title: "Youth Ignite", date: "Every Saturday", time: "4:00 PM", location: "Bufumbanswa", category: "Youth", image: "/Imgs/prayer%203.jpg", description: "Empowering the next generation with the Word and the Spirit." },
+{ title: "Community Outreach", date: "Last Saturday", time: "9:00 AM", location: "Bufumbanswa", category: "Outreach", image: "/Imgs/hero%20image%201.jpeg", description: "Serving our community with love through food, prayer, and support." },
+{ title: "Morning Prayer", date: "Mon - Fri", time: "6:00 AM", location: "Bufumbanswa", category: "Prayer", image: "/Imgs/hero%20image%201.jpeg", description: "Start your day with corporate prayer and scripture." },
+];
+
+async function getEvents() {
+try {
+const data = await API.getEvents();
+return data && data.length ? data : defaultEvents;
+} catch (err) {
+console.error('Failed to load events:', err);
+return defaultEvents;
+}
+}
+
+async function renderEvents(filter = 'all', search = '') {
+const grid = document.getElementById('events-grid');
+const events = await getEvents();
+const filtered = events.filter(e => {
+const matchFilter = filter === 'all' || e.category === filter;
+const matchSearch = !search || e.title.toLowerCase().includes(search.toLowerCase()) || e.description.toLowerCase().includes(search.toLowerCase());
+return matchFilter && matchSearch;
+});
+document.getElementById('event-count').textContent = `Showing ${filtered.length} event${filtered.length !== 1 ? 's' : ''}`;
+if (filtered.length === 0) {
+grid.innerHTML = '<div class="col-span-full text-center py-16"><span class="material-symbols-outlined text-5xl text-on-surface-variant">event_busy</span><p class="text-on-surface-variant mt-4 text-lg">No events found</p></div>';
+return;
+}
+grid.innerHTML = filtered.map((e, i) => `
+<div class="bg-white rounded-2xl border border-outline-variant overflow-hidden hover:shadow-lg transition-all group hover:-translate-y-1 reveal reveal-delay-${i % 4}">
+<div class="relative h-52 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${e.image || defaultEvents[0].image}" alt="${e.title}" loading="lazy">
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-xl text-center shadow-sm shadow-black/10">
+<span class="block font-bold text-primary text-xs leading-tight">${e.date || ''}</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-2 mb-3">
+<span class="inline-block ${e.category === 'Worship' ? 'bg-primary-light text-primary' : e.category === 'Prayer' ? 'bg-primary-light text-primary' : e.category === 'Revival' ? 'bg-holy-light text-holy' : e.category === 'Youth' ? 'bg-accent-light text-accent-dark' : 'bg-surface-container text-on-surface'} text-xs font-bold px-3 py-1 rounded-full">${e.category || 'Event'}</span>
+</div>
+<h3 class="font-bold text-lg text-on-surface mb-2 group-hover:text-primary transition-colors">${e.title}</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-2">${e.description || ''}</p>
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-base">schedule</span> ${e.time || ''}</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-base">location_on</span> ${e.location || ''}</div>
+</div>
+</div>
+</div>
+`).join('');
+document.querySelectorAll('.reveal').forEach(el => {
+if (window.revealObserver) window.revealObserver.observe(el);
+});
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+btn.addEventListener('click', () => {
+document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('bg-primary', 'text-white', 'active-filter'); b.classList.add('bg-surface-container', 'text-on-surface'); });
+btn.classList.remove('bg-surface-container', 'text-on-surface');
+btn.classList.add('bg-primary', 'text-white', 'active-filter');
+renderEvents(btn.dataset.filter, document.getElementById('event-search').value);
+});
+});
+
+// Search
+document.getElementById('event-search').addEventListener('input', (e) => {
+const activeFilter = document.querySelector('.filter-btn.active-filter') || document.querySelector('[data-filter="all"]');
+renderEvents(activeFilter.dataset.filter, e.target.value);
+});
+
+// Initial render
+renderEvents();
+
+// Reveal observer
+window.revealObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+window.revealObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+// Mobile drawer
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('drawer-close');
+const drawer = document.getElementById('drawer');
+const overlay = document.getElementById('drawer-overlay');
+function openDrawer() { drawer.classList.remove('translate-x-full'); overlay.classList.remove('opacity-0', 'invisible'); document.body.style.overflow = 'hidden'; menuBtn.setAttribute('aria-expanded', 'true'); }
+function closeDrawerFn() { drawer.classList.add('translate-x-full'); overlay.classList.add('opacity-0', 'invisible'); document.body.style.overflow = ''; menuBtn.setAttribute('aria-expanded', 'false'); }
+menuBtn.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawerFn);
+overlay.addEventListener('click', closeDrawerFn);
+
+// Hero slideshow
+let eventSlide = 0;
+setInterval(() => {
+eventSlide = (eventSlide + 1) % 2;
+document.getElementById('event-hero-slide-0').style.opacity = eventSlide === 0 ? '1' : '0';
+document.getElementById('event-hero-slide-1').style.opacity = eventSlide === 1 ? '1' : '0';
+}, 5000);
+</script>
+</body>
+</html>

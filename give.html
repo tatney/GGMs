@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta name="theme-color" content="#1E293B"/>
+<title>Give | God's Gospel Ministries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: "#1E293B", "primary-container": "#334155", "primary-dark": "#0F172A",
+"primary-light": "#E2E8F0", "primary-fixed-dim": "#a5c8ff",
+accent: "#3B82F6", "accent-light": "#DBEAFE", "accent-dark": "#2563EB",
+holy: "#3B82F6", "holy-light": "#DBEAFE", "holy-dark": "#2563EB",
+surface: "#FFFFFF", "on-surface": "#121c2a", "on-surface-variant": "#414751",
+"surface-container": "#F1F5F9", "surface-container-high": "#E2E8F0",
+"surface-alt": "#F1F5F9", outline: "#727782", "outline-variant": "#c1c6d3", muted: "#64748B",
+},
+fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" },
+},
+},
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+.material-symbols-outlined{font-variation-settings:'FILL'0,'wght'500,'GRAD'0,'opsz'24;vertical-align:middle;font-size:1.25em}
+body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#121c2a;-webkit-font-smoothing:antialiased}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.show{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+*:focus-visible{outline:2px solid #1E293B;outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;top:-40px;left:0;z-index:100;padding:8px 16px;background:#1E293B;color:#fff;font-size:14px;transition:top .2s}
+.skip-link:focus{top:0;outline:2px solid #3B82F6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.reveal,.reveal.show{opacity:1;transform:none;transition:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div id="top-bar-placeholder"></div>
+
+<!-- MAIN NAV -->
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-between h-14 md:h-16">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-lg shadow-accent/20 flex-shrink-0">
+<span class="material-symbols-outlined text-primary-dark text-xl md:text-2xl">church</span>
+</div>
+<span class="font-bold text-sm md:text-lg tracking-tight text-primary">God's Gospel Ministries</span>
+</div>
+<nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+<a href="index.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Home</a>
+<div class="relative group">
+<button class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light flex items-center gap-1 cursor-pointer">
+Connect
+<svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+</button>
+<div class="absolute top-full left-0 mt-1.5 w-56 bg-white rounded-2xl shadow-2xl shadow-black/10 border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">auto_awesome</span></div>
+<div><p class="font-medium text-on-surface">Prayer Request</p><p class="text-xs text-on-surface-variant">Share your burdens with us</p></div>
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">psychology</span></div>
+<div><p class="font-medium text-on-surface">Counselling</p><p class="text-xs text-on-surface-variant">Get pastoral guidance</p></div>
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">volunteer_activism</span></div>
+<div><p class="font-medium text-on-surface">Testimonies</p><p class="text-xs text-on-surface-variant">Share what God has done</p></div>
+</a>
+</div>
+</div>
+<a href="events.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Events</a>
+<a href="give.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-primary-light text-primary font-bold">Give</a>
+<a href="about.html" class="px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">About</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="connect.html" class="hidden sm:inline-flex items-center gap-2 bg-accent text-on-surface px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-bold text-xs md:text-sm hover:bg-accent-dark transition-all shadow-lg shadow-accent/20 active:scale-95">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+Connect
+</a>
+<button class="lg:hidden relative w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="menu-btn" aria-label="Menu" aria-expanded="false">
+<div class="w-5 h-4 flex flex-col justify-between" id="menu-icon">
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300 origin-center" id="menu-line-1"></span>
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300" id="menu-line-2"></span>
+<span class="block h-0.5 w-full bg-on-surface rounded-full transition-all duration-300 origin-center" id="menu-line-3"></span>
+</div>
+</button>
+</div>
+</div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm opacity-0 invisible transition-all duration-300" id="drawer-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 ease-out" id="drawer">
+<div class="flex items-center justify-between p-4 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center"><span class="material-symbols-outlined text-primary-dark text-lg">church</span></div>
+<span class="font-bold text-sm text-primary">Menu</span>
+</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="drawer-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1 overflow-y-auto" style="height:calc(100% - 60px - 76px)">
+<a href="index.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">home</span></div>
+Home
+</a>
+<div class="px-4 py-2 mt-2">
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Connect</p>
+</div>
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary flex-shrink-0"><span class="material-symbols-outlined">auto_awesome</span></div>
+Prayer Request
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark flex-shrink-0"><span class="material-symbols-outlined">psychology</span></div>
+Counselling
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy flex-shrink-0"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Testimonies
+</a>
+<div class="border-t border-outline-variant my-3"></div>
+<a href="events.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">event</span></div>
+Events
+</a>
+<a href="give.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium bg-primary-light text-primary">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Give
+</a>
+<a href="about.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">info</span></div>
+About
+</a>
+</div>
+</div>
+
+<main id="main-content">
+<!-- Hero -->
+<section class="relative min-h-[400px] flex items-center overflow-hidden">
+<div class="absolute inset-0">
+<div class="absolute inset-0 transition-opacity duration-1000" id="give-hero-0">
+<img src="Imgs/hero%20image%201.jpeg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+<div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="give-hero-1">
+<img src="Imgs/prayer%203.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+<div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="give-hero-2">
+<img src="Imgs/counselling.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 pointer-events-none"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 md:px-10 w-full py-16">
+<div class="max-w-2xl">
+<span class="inline-block bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent px-3 py-1 rounded-full text-xs font-bold mb-4">GIVING</span>
+<h1 class="text-white font-extrabold text-4xl md:text-5xl lg:text-6xl mb-4">Give Generously, <span class="text-accent">Bless Abundantly</span></h1>
+<p class="text-white/80 text-lg mb-8">Your faithful giving enables us to reach more souls, support our community, and advance God's kingdom in Bufumbanswa and beyond.</p>
+</div>
+</div>
+</section>
+
+<!-- Ways to Give -->
+<section class="max-w-7xl mx-auto px-4 md:px-10 py-12 md:py-16">
+<div class="grid md:grid-cols-3 gap-6 mb-16">
+<div class="bg-white rounded-2xl p-6 md:p-8 border border-outline-variant shadow-sm text-center reveal">
+<div class="w-14 h-14 rounded-xl bg-primary-light flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL'1">account_balance</span>
+</div>
+<h3 class="font-bold text-lg text-on-surface mb-2">Bank Transfer</h3>
+<p class="text-on-surface-variant text-sm mb-4">Send your offering directly to our church bank account.</p>
+<div class="bg-surface rounded-xl p-4 text-left text-sm space-y-2">
+<div><span class="text-on-surface-variant text-xs">Bank:</span><p class="font-semibold text-on-surface">Centenary Bank</p></div>
+<div><span class="text-on-surface-variant text-xs">Account Name:</span><p class="font-semibold text-on-surface">God's Gospel Ministries</p></div>
+<div><span class="text-on-surface-variant text-xs">Account Number:</span><p class="font-semibold text-on-surface">3201800229</p></div>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-6 md:p-8 border border-outline-variant shadow-sm text-center reveal reveal-delay-1">
+<div class="w-14 h-14 rounded-xl bg-accent-light flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-accent-dark text-3xl" style="font-variation-settings:'FILL'1">smartphone</span>
+</div>
+<h3 class="font-bold text-lg text-on-surface mb-2">Mobile Money</h3>
+<p class="text-on-surface-variant text-sm mb-4">Use your mobile wallet to give quickly and securely.</p>
+<div class="bg-surface rounded-xl p-4 text-left text-sm space-y-2">
+<div><span class="text-on-surface-variant text-xs">MTN Mobile Money:</span><p class="font-semibold text-on-surface">+256 752 600125</p></div>
+<div><span class="text-on-surface-variant text-xs">Airtel Money:</span><p class="font-semibold text-on-surface">+256 752 600125</p></div>
+<div><span class="text-on-surface-variant text-xs">Name:</span><p class="font-semibold text-on-surface">God's Gospel Ministries</p></div>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-6 md:p-8 border border-outline-variant shadow-sm text-center reveal reveal-delay-2">
+<div class="w-14 h-14 rounded-xl bg-holy-light flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-holy text-3xl" style="font-variation-settings:'FILL'1">church</span>
+</div>
+<h3 class="font-bold text-lg text-on-surface mb-2">In-Person</h3>
+<p class="text-on-surface-variant text-sm mb-4">Give during our worship services at the church.</p>
+<div class="bg-surface rounded-xl p-4 text-left text-sm space-y-2">
+<div><span class="text-on-surface-variant text-xs">Location:</span><p class="font-semibold text-on-surface">Bufumbanswa</p></div>
+<div><span class="text-on-surface-variant text-xs">Service Times:</span><p class="font-semibold text-on-surface">Sunday 10:00 AM</p></div>
+<div><span class="text-on-surface-variant text-xs">Also:</span><p class="font-semibold text-on-surface">Friday 5:00 PM</p></div>
+</div>
+</div>
+</div>
+
+<!-- Donation Form -->
+<section class="max-w-2xl mx-auto reveal" id="give-form">
+<div class="bg-white rounded-2xl p-6 md:p-10 border border-outline-variant shadow-sm">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-dark text-2xl" style="font-variation-settings:'FILL'1">volunteer_activism</span>
+</div>
+<h2 class="text-2xl font-bold text-on-surface">Make a Donation</h2>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-5" onsubmit="handleDonation(event)">
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="donor_name">Full Name *</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Enter your name" required type="text" name="donor_name" id="donor_name"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="email">Email Address *</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="email@example.com" required type="email" name="email" id="email"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="amount">Amount (UGX) *</label>
+<input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="e.g. 50000" required type="number" min="1000" name="amount" id="amount"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="frequency">Frequency</label>
+<select class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" name="frequency" id="frequency">
+<option value="one-time">One-Time</option>
+<option value="monthly">Monthly</option>
+<option value="weekly">Weekly</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="category">Category</label>
+<select class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" name="category" id="category">
+<option value="Offering">Offering</option>
+<option value="Tithe">Tithe</option>
+<option value="Missions">Missions</option>
+<option value="Building Fund">Building Fund</option>
+<option value="Benevolence">Benevolence</option>
+<option value="Other">Other</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-semibold text-sm text-on-surface-variant" for="payment_method">Payment Method</label>
+<select class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" name="payment_method" id="payment_method">
+<option value="">Select method</option>
+<option value="Bank Transfer">Bank Transfer</option>
+<option value="Mobile Money">Mobile Money</option>
+<option value="Cash">Cash (In-Person)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-semibold text-sm text-on-surface-variant" for="notes">Notes (Optional)</label>
+<textarea class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Any special instructions or prayer requests..." rows="3" name="notes" id="notes"></textarea>
+</div>
+<div class="md:col-span-2 flex justify-end mt-2">
+<button class="bg-gradient-to-r from-accent to-accent-dark text-on-surface px-10 py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all flex items-center gap-2 shadow-md active:scale-95" type="submit" id="donate-btn">
+<span class="material-symbols-outlined">favorite</span> Give Now
+</button>
+</div>
+</form>
+<div class="hidden mt-6 p-5 bg-accent-light text-accent-dark rounded-xl border border-accent/30 text-center" id="donation-success" role="status">
+<span class="material-symbols-outlined text-3xl block mb-2" style="font-variation-settings:'FILL'1">check_circle</span>
+Thank you for your generous donation! God bless you richly.
+</div>
+</div>
+</section>
+
+<!-- Impact Section -->
+<section class="max-w-7xl mx-auto px-4 md:px-10 py-16 md:py-20">
+<div class="bg-gradient-to-br from-primary via-primary-dark to-primary rounded-2xl md:rounded-3xl p-8 md:p-16 text-center reveal relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 right-0 w-72 h-72 bg-accent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-holy rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-2xl md:text-4xl font-extrabold text-white mb-4">Your Giving Changes Lives</h2>
+<p class="text-white/80 mb-8">Every donation helps us spread the gospel, support the needy, and build a stronger faith community in Bufumbanswa.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+<div>
+<div class="w-12 h-12 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-outlined text-accent text-2xl">church</span></div>
+<h4 class="font-bold text-white text-lg">Worship</h4>
+<p class="text-white/60 text-sm">Services & equipment</p>
+</div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-outlined text-accent text-2xl">handshake</span></div>
+<h4 class="font-bold text-white text-lg">Outreach</h4>
+<p class="text-white/60 text-sm">Community programs</p>
+</div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-outlined text-accent text-2xl">school</span></div>
+<h4 class="font-bold text-white text-lg">Discipleship</h4>
+<p class="text-white/60 text-sm">Teaching & training</p>
+</div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-outlined text-accent text-2xl">volunteer_activism</span></div>
+<h4 class="font-bold text-white text-lg">Benevolence</h4>
+<p class="text-white/60 text-sm">Helping the needy</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+fetch('/components/top-bar.html').then(r => r.text()).then(h => {
+document.getElementById('top-bar-placeholder').innerHTML = h;
+if (window.footerLoaded) window.footerLoaded();
+});
+fetch('/components/footer.html').then(r => r.text()).then(h => {
+document.getElementById('footer-placeholder').innerHTML = h;
+document.querySelectorAll('.reveal').forEach(el => {
+if (window.revealObserver) window.revealObserver.observe(el);
+});
+window.footerLoaded = true;
+});
+</script>
+
+<script src="/api.js"></script>
+
+<script>
+function handleDonation(event) {
+event.preventDefault();
+const form = event.target;
+const formData = new FormData(form);
+const data = {};
+formData.forEach((value, key) => { data[key] = value; });
+data.amount = parseFloat(data.amount);
+
+const btn = document.getElementById('donate-btn');
+const originalHtml = btn.innerHTML;
+btn.disabled = true;
+btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Processing...';
+
+API.submitDonation(data).then(() => {
+form.classList.add('hidden');
+document.getElementById('donation-success').classList.remove('hidden');
+document.getElementById('donation-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}).catch(err => {
+console.error('Donation failed:', err);
+btn.disabled = false;
+btn.innerHTML = originalHtml;
+alert('Submission failed. Please try again.');
+});
+}
+
+// Mobile drawer
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('drawer-close');
+const drawer = document.getElementById('drawer');
+const overlay = document.getElementById('drawer-overlay');
+function openDrawer() { drawer.classList.remove('translate-x-full'); overlay.classList.remove('opacity-0', 'invisible'); document.body.style.overflow = 'hidden'; menuBtn.setAttribute('aria-expanded', 'true'); }
+function closeDrawerFn() { drawer.classList.add('translate-x-full'); overlay.classList.add('opacity-0', 'invisible'); document.body.style.overflow = ''; menuBtn.setAttribute('aria-expanded', 'false'); }
+menuBtn.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawerFn);
+overlay.addEventListener('click', closeDrawerFn);
+
+window.revealObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+window.revealObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => window.revealObserver.observe(el));
+
+let giveSlide = 0;
+setInterval(() => {
+giveSlide = (giveSlide + 1) % 3;
+document.getElementById('give-hero-0').style.opacity = giveSlide === 0 ? '1' : '0';
+document.getElementById('give-hero-1').style.opacity = giveSlide === 1 ? '1' : '0';
+document.getElementById('give-hero-2').style.opacity = giveSlide === 2 ? '1' : '0';
+}, 5000);
+</script>
+</body>
+</html>

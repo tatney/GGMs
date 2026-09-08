@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta name="theme-color" content="#1E293B"/>
+<title>About Us | God's Gospel Ministries</title>
+<meta name="description" content="Learn more about God's Gospel Ministries - our story, beliefs, vision, and mission in Bufumbanswa."/>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: "#1E293B", "primary-container": "#334155", "primary-dark": "#0F172A",
+"primary-light": "#E2E8F0", "primary-fixed-dim": "#a5c8ff",
+accent: "#3B82F6", "accent-light": "#DBEAFE", "accent-dark": "#2563EB",
+holy: "#3B82F6", "holy-light": "#DBEAFE", "holy-dark": "#2563EB",
+surface: "#FFFFFF", "on-surface": "#121c2a", "on-surface-variant": "#414751",
+"surface-container": "#F1F5F9", "surface-container-high": "#E2E8F0",
+"surface-alt": "#F1F5F9", outline: "#727782", "outline-variant": "#c1c6d3", muted: "#64748B",
+},
+fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" },
+},
+},
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+.material-symbols-outlined{font-variation-settings:'FILL'0,'wght'500,'GRAD'0,'opsz'24;vertical-align:middle;font-size:1.25em}
+body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#121c2a;-webkit-font-smoothing:antialiased}
+.nav-glass{background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(193,198,211,0.5)}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.show{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+.card-hover{transition:all .4s cubic-bezier(.16,1,.3,1)}
+.card-hover:hover{transform:translateY(-6px);box-shadow:0 20px 40px -12px rgba(0,69,129,0.15)}
+*:focus-visible{outline:2px solid #1E293B;outline-offset:2px;border-radius:4px}
+.skip-link{position:absolute;top:-40px;left:0;z-index:100;padding:8px 16px;background:#1E293B;color:#fff;font-size:14px;transition:top .2s}
+.skip-link:focus{top:0;outline:2px solid #3B82F6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.reveal,.reveal.show{opacity:1;transform:none;transition:none}.card-hover,.card-hover:hover{transform:none;box-shadow:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div id="top-bar-placeholder"></div>
+
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-outline-variant transition-all duration-300" id="main-nav">
+<div class="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-between h-14 md:h-16">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-lg shadow-accent/20 flex-shrink-0">
+<span class="material-symbols-outlined text-primary-dark text-xl md:text-2xl">church</span>
+</div>
+<span class="font-bold text-sm md:text-lg tracking-tight whitespace-nowrap text-primary" id="nav-brand">God's Gospel Ministries</span>
+</div>
+<nav class="hidden lg:flex items-center gap-1" id="desktop-nav">
+<a href="index.html" class="nav-link px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Home</a>
+<div class="relative group" id="connect-dropdown">
+<button class="nav-link px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light flex items-center gap-1 cursor-pointer">
+Connect
+<svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+</button>
+<div class="absolute top-full left-0 mt-1.5 w-56 bg-white rounded-2xl shadow-2xl shadow-black/10 border border-outline-variant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">auto_awesome</span></div>
+<div><p class="font-medium text-on-surface">Prayer Request</p><p class="text-xs text-on-surface-variant">Share your burdens with us</p></div>
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">psychology</span></div>
+<div><p class="font-medium text-on-surface">Counselling</p><p class="text-xs text-on-surface-variant">Get pastoral guidance</p></div>
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 hover:bg-primary-light transition-colors text-sm group/link">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy group-hover/link:scale-110 transition-transform"><span class="material-symbols-outlined text-lg">volunteer_activism</span></div>
+<div><p class="font-medium text-on-surface">Testimonies</p><p class="text-xs text-on-surface-variant">Share what God has done</p></div>
+</a>
+</div>
+</div>
+<a href="events.html" class="nav-link px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Events</a>
+<a href="give.html" class="nav-link px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-on-surface hover:bg-primary-light">Give</a>
+<a href="about.html" class="nav-link px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-primary-light text-primary font-bold">About</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="connect.html" class="hidden sm:inline-flex items-center gap-2 bg-accent text-on-surface px-4 md:px-5 py-2 md:py-2.5 rounded-xl font-bold text-xs md:text-sm hover:bg-accent-dark transition-all shadow-lg shadow-accent/20 active:scale-95">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+Connect
+</a>
+<button class="lg:hidden relative w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="menu-btn" aria-label="Menu" aria-expanded="false">
+<div class="w-5 h-4 flex flex-col justify-between" id="menu-icon">
+<span class="block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center" id="menu-line-1"></span>
+<span class="block h-0.5 w-full bg-current rounded-full transition-all duration-300" id="menu-line-2"></span>
+<span class="block h-0.5 w-full bg-current rounded-full transition-all duration-300 origin-center" id="menu-line-3"></span>
+</div>
+</button>
+</div>
+</div>
+</header>
+
+<div class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm opacity-0 invisible transition-all duration-300" id="drawer-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 ease-out" id="drawer">
+<div class="flex items-center justify-between p-4 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center"><span class="material-symbols-outlined text-primary-dark text-lg">church</span></div>
+<span class="font-bold text-sm text-primary">Menu</span>
+</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-surface-alt transition-colors" id="drawer-close">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1 overflow-y-auto" style="height:calc(100% - 60px - 76px)">
+<a href="index.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">home</span></div>
+Home
+</a>
+<div class="px-4 py-2 mt-2">
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Connect</p>
+</div>
+<a href="connect.html#prayer-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary flex-shrink-0"><span class="material-symbols-outlined">auto_awesome</span></div>
+Prayer Request
+</a>
+<a href="connect.html#counselling-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent-dark flex-shrink-0"><span class="material-symbols-outlined">psychology</span></div>
+Counselling
+</a>
+<a href="connect.html#testimony-form" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm hover:bg-primary-light transition-colors ml-3">
+<div class="w-8 h-8 rounded-lg bg-holy-light flex items-center justify-center text-holy flex-shrink-0"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Testimonies
+</a>
+<div class="border-t border-outline-variant my-3"></div>
+<a href="events.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">event</span></div>
+Events
+</a>
+<a href="give.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium hover:bg-primary-light transition-colors">
+<div class="w-9 h-9 rounded-lg bg-primary-light flex items-center justify-center text-primary"><span class="material-symbols-outlined">volunteer_activism</span></div>
+Give
+</a>
+<a href="about.html" class="flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-medium bg-primary-light text-primary font-bold">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white"><span class="material-symbols-outlined">info</span></div>
+About
+</a>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 border-t border-outline-variant bg-white">
+<a href="connect.html" class="flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-accent-dark text-on-surface w-full py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-accent/20 active:scale-95 transition-transform">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+Get Connected
+</a>
+</div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="relative min-h-[400px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0">
+<div class="absolute inset-0 transition-opacity duration-1000" id="about-hero-0">
+<img src="Imgs/hero%20image%201.jpeg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+<div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="about-hero-1">
+<img src="Imgs/prayer%201.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+<div class="absolute inset-0 transition-opacity duration-1000 opacity-0" id="about-hero-2">
+<img src="Imgs/prayer%202.jpg" alt="" class="w-full h-full object-cover" style="filter:brightness(0.55)"/>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 pointer-events-none"></div>
+<div class="relative z-10 text-center px-4 max-w-3xl mx-auto py-16 md:py-20">
+<span class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md border border-white/20 text-accent px-3.5 py-1.5 rounded-full text-xs md:text-sm font-semibold mb-4 reveal">
+<svg class="w-2 h-2 fill-accent" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+About Our Church
+</span>
+<h1 class="text-white font-extrabold text-3xl md:text-5xl lg:text-6xl mb-3 md:mb-4 reveal reveal-delay-1">Who We Are</h1>
+<p class="text-white/70 text-sm md:text-lg max-w-xl mx-auto reveal reveal-delay-2">A Spirit-filled Pentecostal community passionate about God's presence and power.</p>
+</div>
+</section>
+
+<main id="main-content" class="py-10 md:py-20">
+<div class="max-w-7xl mx-auto px-4 md:px-10">
+
+<!-- OUR STORY -->
+<section class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-24">
+<div class="space-y-4 md:space-y-6 reveal">
+<span class="inline-flex items-center gap-1.5 bg-accent-light text-accent-dark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+Our Story
+</span>
+<h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-on-surface leading-tight">Founded on <span class="text-primary">Faith</span>, Fueled by <span class="text-holy">Fire</span></h2>
+<p class="text-on-surface-variant text-sm md:text-base leading-relaxed">God's Gospel Ministries was born out of a passion to see lives transformed by the power of the Holy Spirit. What started as a small gathering in Bufumbanswa has grown into a vibrant community of believers dedicated to worship, prayer, and outreach.</p>
+<p class="text-on-surface-variant text-sm md:text-base leading-relaxed">We believe in the uncompromising Word of God, the power of prayer, and the gifts of the Holy Spirit. Our doors are open to everyone seeking a genuine encounter with God.</p>
+<div class="flex flex-wrap gap-4 pt-2">
+<div class="flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 border border-outline-variant shadow-sm"><svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span class="font-semibold text-sm text-on-surface">500+ Members</span></div>
+<div class="flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 border border-outline-variant shadow-sm"><svg class="w-5 h-5 text-accent-dark" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span class="font-semibold text-sm text-on-surface">10+ Years</span></div>
+</div>
+</div>
+<div class="relative reveal reveal-delay-1">
+<div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+<img src="Imgs/image%205%20H.jpeg" alt="Worship" class="w-full h-full object-cover object-top" loading="lazy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+</section>
+
+<!-- BELIEFS -->
+<section class="mb-16 md:mb-24">
+<div class="text-center mb-8 md:mb-12 reveal">
+<span class="inline-flex items-center gap-1.5 bg-primary-light text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+Our Foundation
+</span>
+<h2 class="text-2xl md:text-4xl font-extrabold text-on-surface">What We Believe</h2>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+<div class="bg-white rounded-2xl p-5 md:p-6 border border-outline-variant shadow-sm card-hover reveal">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-3 md:mb-4 shadow-lg shadow-primary/20"><svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg></div>
+<h3 class="font-bold text-on-surface text-sm md:text-base mb-1.5">The Bible</h3>
+<p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">The inspired, infallible Word of God and our final authority for faith and practice.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 md:p-6 border border-outline-variant shadow-sm card-hover reveal reveal-delay-1">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-holy to-holy-dark flex items-center justify-center mb-3 md:mb-4 shadow-lg shadow-holy/20"><svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg></div>
+<h3 class="font-bold text-on-surface text-sm md:text-base mb-1.5">The Holy Spirit</h3>
+<p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Baptism of the Holy Spirit with evidence of speaking in tongues and spiritual gifts.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 md:p-6 border border-outline-variant shadow-sm card-hover reveal reveal-delay-2">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mb-3 md:mb-4 shadow-lg shadow-accent/20"><svg class="w-5 h-5 md:w-6 md:h-6 text-on-surface" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+<h3 class="font-bold text-on-surface text-sm md:text-base mb-1.5">Salvation</h3>
+<p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Salvation is by grace through faith in Jesus Christ, His death, burial, and resurrection.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 md:p-6 border border-outline-variant shadow-sm card-hover reveal reveal-delay-3">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-3 md:mb-4 shadow-lg shadow-primary/20"><svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+<h3 class="font-bold text-on-surface text-sm md:text-base mb-1.5">Divine Healing</h3>
+<p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Divine healing is provided through the atonement of Jesus Christ.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 md:p-6 border border-outline-variant shadow-sm card-hover reveal reveal-delay-4">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-holy to-holy-dark flex items-center justify-center mb-3 md:mb-4 shadow-lg shadow-holy/20"><svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+<h3 class="font-bold text-on-surface text-sm md:text-base mb-1.5">The Church</h3>
+<p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">The universal Church as the body of Christ and the local church as a community of believers.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 md:p-6 border border-outline-variant shadow-sm card-hover reveal reveal-delay-4">
+<div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center mb-3 md:mb-4 shadow-lg shadow-accent/20"><svg class="w-5 h-5 md:w-6 md:h-6 text-on-surface" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+<h3 class="font-bold text-on-surface text-sm md:text-base mb-1.5">The Great Commission</h3>
+<p class="text-on-surface-variant text-xs md:text-sm leading-relaxed">Fulfilling the Great Commission by making disciples of all nations.</p>
+</div>
+</div>
+</section>
+
+<!-- VISION / 2ND IMAGE -->
+<section class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-24">
+<div class="relative order-2 lg:order-1 reveal">
+<div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+<img src="Imgs/image%204%20h.jpeg" alt="Worship with raised hands" class="w-full h-full object-cover" loading="lazy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+<div class="space-y-4 md:space-y-6 order-1 lg:order-2 reveal reveal-delay-1">
+<span class="inline-flex items-center gap-1.5 bg-holy-light text-holy px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/></svg>
+Our Vision
+</span>
+<h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-on-surface leading-tight">Reaching the World with <span class="text-holy">God's Power</span></h2>
+<p class="text-on-surface-variant text-sm md:text-base leading-relaxed">We envision a community where every believer operates in their God-given gifts, where the lost are found, the broken are healed, and the next generation is raised up in the fear and knowledge of God.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 pt-2">
+<div class="bg-white rounded-xl md:rounded-2xl p-3 md:p-5 border border-outline-variant text-center shadow-sm"><p class="text-xl md:text-3xl font-extrabold text-primary">10+</p><p class="text-on-surface-variant text-[10px] md:text-xs mt-0.5">Years</p></div>
+<div class="bg-white rounded-xl md:rounded-2xl p-3 md:p-5 border border-outline-variant text-center shadow-sm"><p class="text-xl md:text-3xl font-extrabold text-accent-dark">500+</p><p class="text-on-surface-variant text-[10px] md:text-xs mt-0.5">Souls</p></div>
+<div class="bg-white rounded-xl md:rounded-2xl p-3 md:p-5 border border-outline-variant text-center shadow-sm"><p class="text-xl md:text-3xl font-extrabold text-holy">50+</p><p class="text-on-surface-variant text-[10px] md:text-xs mt-0.5">Partners</p></div>
+<div class="bg-white rounded-xl md:rounded-2xl p-3 md:p-5 border border-outline-variant text-center shadow-sm"><p class="text-xl md:text-3xl font-extrabold text-primary">10+</p><p class="text-on-surface-variant text-[10px] md:text-xs mt-0.5">Programs</p></div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="relative rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary-dark px-6 md:px-12 py-10 md:py-16 text-center reveal mb-16">
+<div class="absolute inset-0 opacity-15"><div class="absolute top-0 right-0 w-72 h-72 bg-accent rounded-full blur-3xl"></div><div class="absolute bottom-0 left-0 w-96 h-96 bg-holy rounded-full blur-3xl"></div></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 md:mb-4">Come Worship With Us</h2>
+<p class="text-white/70 text-sm md:text-lg mb-6 md:mb-8 max-w-xl mx-auto">Experience the power of God in a community that cares. We'd love to welcome you.</p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center">
+<a href="connect.html" class="inline-flex items-center justify-center gap-2 bg-accent text-on-surface px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-bold text-sm md:text-base hover:bg-accent-dark transition-all shadow-xl shadow-accent/20 active:scale-95"><svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Get Connected</a>
+<a href="tel:+256752600125" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/25 text-white px-6 md:px-8 py-3 md:py-3.5 rounded-xl font-semibold text-sm md:text-base hover:bg-white/20 transition-all active:scale-95"><svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>Call Us: +256 752 600125</a>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+fetch('/components/top-bar.html').then(r => r.text()).then(h => document.getElementById('top-bar-placeholder').innerHTML = h);
+fetch('/components/footer.html').then(r => r.text()).then(h => {
+document.getElementById('footer-placeholder').innerHTML = h;
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+});
+</script>
+
+<script>
+const nav = document.getElementById('main-nav');
+
+window.addEventListener('scroll', () => {
+if (window.scrollY > 60) {
+nav.classList.add('nav-glass');
+} else {
+nav.classList.remove('nav-glass');
+}
+});
+
+const menuBtn = document.getElementById('menu-btn');
+const drawer = document.getElementById('drawer');
+const overlay = document.getElementById('drawer-overlay');
+const closeBtn = document.getElementById('drawer-close');
+const lines = [
+document.getElementById('menu-line-1'),
+document.getElementById('menu-line-2'),
+document.getElementById('menu-line-3')
+];
+
+function openDrawer() {
+	drawer.classList.remove('translate-x-full');
+	overlay.classList.remove('opacity-0', 'invisible');
+	document.body.style.overflow = 'hidden';
+	menuBtn.setAttribute('aria-expanded', 'true');
+	lines[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+	lines[1].style.opacity = '0';
+	lines[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+}
+function closeDrawer() {
+	drawer.classList.add('translate-x-full');
+	overlay.classList.add('opacity-0', 'invisible');
+	document.body.style.overflow = '';
+	menuBtn.setAttribute('aria-expanded', 'false');
+	lines[0].style.transform = '';
+	lines[1].style.opacity = '1';
+	lines[2].style.transform = '';
+}
+menuBtn.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+overlay.addEventListener('click', closeDrawer);
+
+const revealObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+revealObserver.unobserve(entry.target);
+}
+});
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+let aboutSlide = 0;
+setInterval(() => {
+aboutSlide = (aboutSlide + 1) % 3;
+document.getElementById('about-hero-0').style.opacity = aboutSlide === 0 ? '1' : '0';
+document.getElementById('about-hero-1').style.opacity = aboutSlide === 1 ? '1' : '0';
+document.getElementById('about-hero-2').style.opacity = aboutSlide === 2 ? '1' : '0';
+}, 5000);
+</script>
+</body>
+</html>
