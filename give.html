@@ -183,11 +183,20 @@ About
 </div>
 <h3 class="font-bold text-lg text-on-surface mb-2">Bank Transfer</h3>
 <p class="text-on-surface-variant text-sm mb-4">Send your offering directly to our church bank account.</p>
-<div class="bg-surface rounded-xl p-4 text-left text-sm space-y-2">
+<div class="hidden bg-surface rounded-xl p-4 text-left text-sm space-y-2" id="bank-details">
 <div><span class="text-on-surface-variant text-xs">Bank:</span><p class="font-semibold text-on-surface">Centenary Bank</p></div>
 <div><span class="text-on-surface-variant text-xs">Account Name:</span><p class="font-semibold text-on-surface">God's Gospel Ministries</p></div>
+<div class="flex items-center justify-between gap-2">
 <div><span class="text-on-surface-variant text-xs">Account Number:</span><p class="font-semibold text-on-surface">3201800229</p></div>
+<button class="p-1.5 rounded-lg text-accent-dark hover:bg-accent-light transition-colors" onclick="copyText('3201800229', this)" title="Copy account number"><span class="material-symbols-outlined text-lg">content_copy</span></button>
 </div>
+<div class="flex justify-center pt-2">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=God%27s%20Gospel%20Ministries%0ACentenary%20Bank%0AAccount%20Number%3A%203201800229" alt="QR code for God's Gospel Ministries bank account" width="180" height="180" loading="lazy"/>
+</div>
+</div>
+<button class="mt-4 inline-flex items-center gap-2 bg-primary-light text-primary px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary transition-all hover:text-white" onclick="toggleDetails('bank-details', this)" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span> Show Bank Details
+</button>
 </div>
 <div class="bg-white rounded-2xl p-6 md:p-8 border border-outline-variant shadow-sm text-center reveal reveal-delay-1">
 <div class="w-14 h-14 rounded-xl bg-accent-light flex items-center justify-center mx-auto mb-4">
@@ -195,11 +204,23 @@ About
 </div>
 <h3 class="font-bold text-lg text-on-surface mb-2">Mobile Money</h3>
 <p class="text-on-surface-variant text-sm mb-4">Use your mobile wallet to give quickly and securely.</p>
-<div class="bg-surface rounded-xl p-4 text-left text-sm space-y-2">
+<div class="hidden bg-surface rounded-xl p-4 text-left text-sm space-y-2" id="momo-details">
+<div class="flex items-center justify-between gap-2">
 <div><span class="text-on-surface-variant text-xs">MTN Mobile Money:</span><p class="font-semibold text-on-surface">+256 752 600125</p></div>
-<div><span class="text-on-surface-variant text-xs">Airtel Money:</span><p class="font-semibold text-on-surface">+256 752 600125</p></div>
-<div><span class="text-on-surface-variant text-xs">Name:</span><p class="font-semibold text-on-surface">God's Gospel Ministries</p></div>
+<button class="p-1.5 rounded-lg text-accent-dark hover:bg-accent-light transition-colors" onclick="copyText('+256752600125', this)" title="Copy MTN number"><span class="material-symbols-outlined text-lg">content_copy</span></button>
 </div>
+<div class="flex items-center justify-between gap-2">
+<div><span class="text-on-surface-variant text-xs">Airtel Money:</span><p class="font-semibold text-on-surface">+256 752 600125</p></div>
+<button class="p-1.5 rounded-lg text-accent-dark hover:bg-accent-light transition-colors" onclick="copyText('+256752600125', this)" title="Copy Airtel number"><span class="material-symbols-outlined text-lg">content_copy</span></button>
+</div>
+<div><span class="text-on-surface-variant text-xs">Name:</span><p class="font-semibold text-on-surface">God's Gospel Ministries</p></div>
+<div class="flex justify-center pt-2">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tel%3A%2B256752600125" alt="QR code for Mobile Money giving" width="180" height="180" loading="lazy"/>
+</div>
+</div>
+<button class="mt-4 inline-flex items-center gap-2 bg-primary-light text-primary px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary transition-all hover:text-white" onclick="toggleDetails('momo-details', this)" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span> Show Mobile Money Details
+</button>
 </div>
 <div class="bg-white rounded-2xl p-6 md:p-8 border border-outline-variant shadow-sm text-center reveal reveal-delay-2">
 <div class="w-14 h-14 rounded-xl bg-holy-light flex items-center justify-center mx-auto mb-4">
@@ -218,13 +239,14 @@ About
 <!-- Donation Form -->
 <section class="max-w-2xl mx-auto reveal" id="give-form">
 <div class="bg-white rounded-2xl p-6 md:p-10 border border-outline-variant shadow-sm">
-<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center gap-4 mb-4">
 <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center">
 <span class="material-symbols-outlined text-accent-dark text-2xl" style="font-variation-settings:'FILL'1">volunteer_activism</span>
 </div>
-<h2 class="text-2xl font-bold text-on-surface">Make a Donation</h2>
+<h2 class="text-2xl font-bold text-on-surface">Pledge a Donation</h2>
 </div>
-<form class="grid grid-cols-1 md:grid-cols-2 gap-5" onsubmit="handleDonation(event)">
+<p class="text-on-surface-variant text-sm mb-8">Make your pledge here and we'll give you a unique reference to use when you send your gift. A ministry member will confirm it once it arrives.</p>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-5" onsubmit="handleDonation(event)" id="donation-form">
 <div class="flex flex-col gap-1.5">
 <label class="font-semibold text-sm text-on-surface-variant" for="donor_name">Full Name *</label>
 <input class="rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Enter your name" required type="text" name="donor_name" id="donor_name"/>
@@ -277,7 +299,17 @@ About
 </form>
 <div class="hidden mt-6 p-5 bg-accent-light text-accent-dark rounded-xl border border-accent/30 text-center" id="donation-success" role="status">
 <span class="material-symbols-outlined text-3xl block mb-2" style="font-variation-settings:'FILL'1">check_circle</span>
-Thank you for your generous donation! God bless you richly.
+<p class="font-bold text-on-surface">Thank you for pledging. God bless you richly!</p>
+<div class="mt-3 inline-flex items-center gap-2 bg-white border border-accent/30 rounded-xl px-5 py-3">
+<span class="text-xs font-semibold text-accent-dark">Your Donation Reference:</span>
+<span class="font-mono font-bold text-lg text-on-surface tracking-widest" id="donation-reference">----</span>
+<button class="p-1.5 rounded-lg text-accent-dark hover:bg-accent-light transition-colors" onclick="copyDonationRef(this)" title="Copy reference"><span class="material-symbols-outlined text-lg">content_copy</span></button>
+</div>
+<p class="text-sm mt-3" id="donation-instructions"></p>
+<p class="text-xs mt-2 opacity-80">Please use this reference when you send your gift so we can confirm it.</p>
+<button class="mt-4 inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary-dark transition-all active:scale-95" onclick="resetDonationForm()" type="button">
+<span class="material-symbols-outlined text-lg">replay</span> Make Another Pledge
+</button>
 </div>
 </div>
 </section>
@@ -338,6 +370,36 @@ window.footerLoaded = true;
 <script src="/api.js"></script>
 
 <script>
+function toggleDetails(id, btn) {
+const el = document.getElementById(id);
+const isHidden = el.classList.contains('hidden');
+el.classList.toggle('hidden');
+btn.innerHTML = isHidden
+? '<span class="material-symbols-outlined text-lg">visibility_off</span> Hide Details'
+: '<span class="material-symbols-outlined text-lg">visibility</span> Show Details';
+}
+
+function copyText(text, btn) {
+navigator.clipboard?.writeText(text).then(() => {
+const original = btn.innerHTML;
+btn.innerHTML = '<span class="material-symbols-outlined text-lg">check</span>';
+setTimeout(() => { btn.innerHTML = original; }, 1500);
+}).catch(() => {});
+}
+
+function copyDonationRef(btn) {
+const ref = document.getElementById('donation-reference').textContent;
+copyText(ref, btn);
+}
+
+function resetDonationForm() {
+document.getElementById('donation-success').classList.add('hidden');
+const form = document.getElementById('donation-form');
+form.reset();
+form.classList.remove('hidden');
+form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 function handleDonation(event) {
 event.preventDefault();
 const form = event.target;
@@ -351,10 +413,25 @@ const originalHtml = btn.innerHTML;
 btn.disabled = true;
 btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Processing...';
 
-API.submitDonation(data).then(() => {
+API.submitDonation(data).then(res => {
 form.classList.add('hidden');
-document.getElementById('donation-success').classList.remove('hidden');
-document.getElementById('donation-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+document.getElementById('donation-reference').textContent = res.reference || '';
+const amount = 'UGX ' + data.amount.toLocaleString();
+const method = data.payment_method || '';
+let instructions;
+if (method === 'Bank Transfer') {
+instructions = `Please send ${amount} by bank transfer to Centenary Bank, Account 3201800229 in the name "God's Gospel Ministries", and enter the reference ${res.reference} in the transfer remarks if your bank supports it.`;
+} else if (method === 'Mobile Money') {
+instructions = `Please send ${amount} to +256 752 600125 (MTN or Airtel Money) and include the reference ${res.reference} in your payment message.`;
+} else if (method === 'Cash (In-Person)') {
+instructions = `Please present ${amount} at the church in Bufumbanswa and mention the reference ${res.reference} to our offering team.`;
+} else {
+instructions = `To complete your gift of ${amount}, use one of the giving methods above and include the reference ${res.reference} with your payment.`;
+}
+document.getElementById('donation-instructions').textContent = instructions;
+const success = document.getElementById('donation-success');
+success.classList.remove('hidden');
+success.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }).catch(err => {
 console.error('Donation failed:', err);
 btn.disabled = false;

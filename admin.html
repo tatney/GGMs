@@ -75,6 +75,9 @@ window.location.href = 'admin-login.html';
 <button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('news')">
 <span class="material-symbols-outlined text-lg">newspaper</span> News Manager
 </button>
+<button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('donations')">
+<span class="material-symbols-outlined text-lg">volunteer_activism</span> Donations
+</button>
 <button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('settings')">
 <span class="material-symbols-outlined text-lg">settings</span> Settings
 </button>
@@ -118,6 +121,7 @@ window.location.href = 'admin-login.html';
 <button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('forms'); toggleMobileSidebar();"><span class="material-symbols-outlined text-lg">description</span> Form Submissions</button>
 <button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('events'); toggleMobileSidebar();"><span class="material-symbols-outlined text-lg">event</span> Events Manager</button>
 <button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('news'); toggleMobileSidebar();"><span class="material-symbols-outlined text-lg">newspaper</span> News Manager</button>
+<button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('donations'); toggleMobileSidebar();"><span class="material-symbols-outlined text-lg">volunteer_activism</span> Donations</button>
 <button class="sidebar-link relative flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm w-full text-left" onclick="switchTab('settings'); toggleMobileSidebar();"><span class="material-symbols-outlined text-lg">settings</span> Settings</button>
 </nav>
 <div class="absolute bottom-6 left-6 right-6 pt-4 border-t border-outline-variant">
@@ -227,6 +231,40 @@ window.location.href = 'admin-login.html';
 </div>
 </div>
 
+<div id="tab-donations" class="hidden">
+<div class="mb-8">
+<h1 class="text-2xl md:text-3xl font-extrabold text-on-surface">Donations</h1>
+<p class="text-on-surface-variant text-sm mt-1">Track pledges and confirm gifts once they arrive.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="bg-white rounded-2xl p-6 border border-outline-variant shadow-sm">
+<p class="text-3xl font-extrabold text-on-surface" id="donation-stat-total">0</p>
+<p class="text-on-surface-variant text-sm">Confirmed Total (UGX)</p>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-outline-variant shadow-sm">
+<p class="text-3xl font-extrabold text-on-surface" id="donation-stat-count">0</p>
+<p class="text-on-surface-variant text-sm">Confirmed Gifts</p>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-outline-variant shadow-sm">
+<p class="text-3xl font-extrabold text-warning" id="donation-stat-pending">0</p>
+<p class="text-on-surface-variant text-sm">Pending Pledges</p>
+</div>
+</div>
+<div class="flex gap-2 mb-6 overflow-x-auto no-scrollbar">
+<button class="tab-btn active-tab px-5 py-2.5 rounded-xl text-sm font-semibold transition-all" data-dstatus="all" onclick="filterDonations('all')">All</button>
+<button class="tab-btn px-5 py-2.5 rounded-xl text-sm font-medium bg-surface-container hover:bg-surface-container-high transition-all" data-dstatus="pending" onclick="filterDonations('pending')">Pending</button>
+<button class="tab-btn px-5 py-2.5 rounded-xl text-sm font-medium bg-surface-container hover:bg-surface-container-high transition-all" data-dstatus="completed" onclick="filterDonations('completed')">Completed</button>
+</div>
+<div class="bg-white rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead><tr class="bg-surface-container text-xs font-semibold text-on-surface-variant uppercase tracking-wider"><th class="px-6 py-4">Reference</th><th class="px-6 py-4">Name</th><th class="px-6 py-4">Email</th><th class="px-6 py-4">Amount</th><th class="px-6 py-4">Category</th><th class="px-6 py-4">Method</th><th class="px-6 py-4">Date</th><th class="px-6 py-4">Status</th><th class="px-6 py-4">Actions</th></tr></thead>
+<tbody id="donations-table-body"><tr><td class="px-6 py-8 text-center text-on-surface-variant text-sm" colspan="9">No donations yet.</td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+
 <div id="tab-settings" class="hidden">
 <div class="mb-8">
 <h1 class="text-2xl md:text-3xl font-extrabold text-on-surface">Settings</h1>
@@ -329,12 +367,13 @@ document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('acti
 document.querySelectorAll('[onclick*="' + tab + '"]').forEach(l => l.classList.add('active'));
 document.querySelectorAll('[id^="tab-"]').forEach(t => t.classList.add('hidden'));
 document.getElementById('tab-' + tab).classList.remove('hidden');
-const titles = { dashboard: 'Dashboard', forms: 'Form Submissions', events: 'Events Manager', news: 'News Manager', settings: 'Settings' };
+const titles = { dashboard: 'Dashboard', forms: 'Form Submissions', events: 'Events Manager', news: 'News Manager', donations: 'Donations', settings: 'Settings' };
 document.getElementById('page-title').textContent = titles[tab] || 'Dashboard';
 if (tab === 'dashboard') updateDashboard();
 if (tab === 'forms') renderSubmissions();
 if (tab === 'events') renderEventsTable();
 if (tab === 'news') renderNewsTable();
+if (tab === 'donations') renderDonations();
 }
 
 function toggleMobileSidebar() {
@@ -571,6 +610,68 @@ if (art) showNewsModal(art);
 async function deleteArticle(id) {
 if (!confirm('Delete this article?')) return;
 try { await API.deleteArticle(id); renderNewsTable(); } catch (err) { console.error(err); }
+}
+
+let donationsCache = [];
+let currentDonationFilter = 'all';
+
+async function renderDonations(filter = currentDonationFilter) {
+currentDonationFilter = filter;
+try {
+const [grace, stats] = await Promise.all([API.getDonations(), API.getDonationStats()]);
+donationsCache = grace;
+document.getElementById('donation-stat-total').textContent = stats.total.toLocaleString();
+document.getElementById('donation-stat-count').textContent = stats.count;
+document.getElementById('donation-stat-pending').textContent = stats.pending;
+const tbody = document.getElementById('donations-table-body');
+const list = filter === 'all' ? donationsCache : donationsCache.filter(d => d.status === filter);
+if (list.length === 0) {
+tbody.innerHTML = '<tr><td class="px-6 py-8 text-center text-on-surface-variant text-sm" colspan="9">No donations found.</td></tr>';
+return;
+}
+const statusLabels = { pending: 'Pending', completed: 'Completed' };
+const statusColors = { pending: 'bg-warning-light text-warning', completed: 'bg-success-light text-success' };
+tbody.innerHTML = list.map(d => `
+<tr class="border-b border-outline-variant/50 hover:bg-surface-container/50 transition-colors">
+<td class="px-6 py-4"><span class="font-mono text-xs font-bold bg-surface-container text-on-surface px-2.5 py-1 rounded-lg">${d.reference || '-'}</span></td>
+<td class="px-6 py-4 text-sm font-medium">${d.donor_name || 'Anonymous'}</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">${d.email || '-'}</td>
+<td class="px-6 py-4 text-sm text-on-surface whitespace-nowrap">UGX ${Number(d.amount || 0).toLocaleString()}</td>
+<td class="px-6 py-4"><span class="bg-primary-light text-primary text-xs font-bold px-2.5 py-1 rounded-full">${d.category || 'Offering'}</span></td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">${d.payment_method || '-'}</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant whitespace-nowrap">${new Date(d.created_at).toLocaleString()}</td>
+<td class="px-6 py-4"><span class="${statusColors[d.status] || 'bg-surface-container text-on-surface'} text-xs font-bold px-2.5 py-1 rounded-full">${(statusLabels[d.status] || d.status || 'Pending').toUpperCase()}</span></td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+${d.status !== 'completed' ? `<button class="p-1.5 rounded-lg text-success hover:bg-success-light transition-all" onclick="confirmDonation(${d.id})" title="Mark as received"><span class="material-symbols-outlined text-lg">check_circle</span></button>` : `<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-warning hover:bg-warning-light transition-all" onclick="unconfirmDonation(${d.id})" title="Mark as pending"><span class="material-symbols-outlined text-lg">undo</span></button>`}
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-holy hover:bg-holy-light transition-all" onclick="deleteDonation(${d.id})" title="Delete"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+`).join('');
+} catch (err) { console.error('Render donations failed:', err); }
+}
+
+function filterDonations(status) {
+document.querySelectorAll('.tab-btn[data-dstatus]').forEach(b => { b.classList.remove('active-tab', 'bg-primary', 'text-white'); b.classList.add('bg-surface-container', 'text-on-surface'); });
+document.querySelector(`.tab-btn[data-dstatus="${status}"]`).classList.remove('bg-surface-container', 'text-on-surface');
+document.querySelector(`.tab-btn[data-dstatus="${status}"]`).classList.add('active-tab', 'bg-primary', 'text-white');
+renderDonations(status);
+}
+
+async function confirmDonation(id) {
+if (!confirm('Confirm this gift as received?')) return;
+try { await API.confirmDonation(id); renderDonations(); } catch (err) { console.error(err); }
+}
+
+async function unconfirmDonation(id) {
+if (!confirm('Mark this gift back as pending?')) return;
+try { await API.unconfirmDonation(id); renderDonations(); } catch (err) { console.error(err); }
+}
+
+async function deleteDonation(id) {
+if (!confirm('Delete this donation record?')) return;
+try { await API.deleteDonation(id); renderDonations(); } catch (err) { console.error(err); }
 }
 
 async function changePassword(event) {

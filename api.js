@@ -44,5 +44,8 @@ const API = {
   // Donations
   submitDonation(data) { return this.request('POST', '/donations', data, false); },
   getDonations() { return this.request('GET', '/donations'); },
+  confirmDonation(id) { return this.request('PATCH', `/donations/${id}/confirm`, {}); },
+  unconfirmDonation(id) { return this.request('PATCH', `/donations/${id}/pending`, {}); },
+  deleteDonation(id) { return this.request('DELETE', `/donations/${id}`); },
   getDonationStats() { return this.request('GET', '/donations/stats'); },
 };
