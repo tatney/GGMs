@@ -499,7 +499,12 @@ window.location.href = 'admin-login.html';
 <div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Time</label><input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" required id="event-time" placeholder="e.g. 10:00 AM"/></div>
 <div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Location</label><input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" required id="event-location" placeholder="e.g. Bufumbanswa"/></div>
 </div>
-<div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Image URL</label><input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" id="event-image" placeholder="https://images.unsplash.com/..."/></div>
+<div>
+<label class="block font-semibold text-sm text-on-surface-variant mb-1">Event Image</label>
+<input type="hidden" id="event-image"/>
+<input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-2.5 px-4 text-sm" type="file" id="event-image-input" accept="image/jpeg,image/png,image/webp" onchange="previewUpload(this,'event-image-preview','event-image-preview-wrap')"/>
+<div class="mt-2 hidden" id="event-image-preview-wrap"><img class="w-full h-36 object-cover rounded-xl border border-outline-variant" id="event-image-preview" alt="Event image"/></div>
+</div>
 <div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Description</label><textarea class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" rows="3" id="event-description" placeholder="Describe the event..."></textarea></div>
 </div>
 <div class="flex justify-end gap-3 mt-6">
@@ -530,7 +535,12 @@ window.location.href = 'admin-login.html';
 </select></div>
 <div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Author</label><input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" id="news-author" placeholder="Admin"/></div>
 </div>
-<div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Image URL</label><input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" id="news-image" placeholder="https://images.unsplash.com/..."/></div>
+<div>
+<label class="block font-semibold text-sm text-on-surface-variant mb-1">Article Image</label>
+<input type="hidden" id="news-image"/>
+<input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-2.5 px-4 text-sm" type="file" id="news-image-input" accept="image/jpeg,image/png,image/webp" onchange="previewUpload(this,'news-image-preview','news-image-preview-wrap')"/>
+<div class="mt-2 hidden" id="news-image-preview-wrap"><img class="w-full h-36 object-cover rounded-xl border border-outline-variant" id="news-image-preview" alt="Article image"/></div>
+</div>
 <div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Excerpt</label><textarea class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" rows="2" id="news-excerpt" placeholder="Brief summary..."></textarea></div>
 <div><label class="block font-semibold text-sm text-on-surface-variant mb-1">Content</label><textarea class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" rows="5" id="news-content" placeholder="Full article content..."></textarea></div>
 </div>
@@ -822,6 +832,54 @@ tbody.innerHTML = events.map((e, i) => `
 } catch (err) { console.error('Render events failed:', err); }
 }
 
+function previewUpload(input, previewId, wrapId) {
+const wrap = document.getElementById(wrapId);
+const img = document.getElementById(previewId);
+if (input.files && input.files[0]) {
+img.src = URL.createObjectURL(input.files[0]);
+wrap.classList.remove('hidden');
+} else {
+wrap.classList.add('hidden');
+}
+}
+
+function readImageFile(file) {
+return new Promise((resolve, reject) => {
+const reader = new FileReader();
+reader.onload = () => {
+const img = new Image();
+img.onload = () => {
+const maxDim = 1400;
+let { width, height } = img;
+if (width > maxDim || height > maxDim) {
+const scale = maxDim / Math.max(width, height);
+width = Math.round(width * scale);
+height = Math.round(height * scale);
+}
+const canvas = document.createElement('canvas');
+canvas.width = width;
+canvas.height = height;
+canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+resolve(canvas.toDataURL('image/jpeg', 0.82));
+};
+img.onerror = reject;
+img.src = reader.result;
+};
+reader.onerror = reject;
+reader.readAsDataURL(file);
+});
+}
+
+async function handleImageUpload(inputId, hiddenId, folder) {
+const input = document.getElementById(inputId);
+if (input.files && input.files[0]) {
+const dataUrl = await readImageFile(input.files[0]);
+const { url } = await API.uploadImage(dataUrl, folder);
+return url;
+}
+return document.getElementById(hiddenId).value || '';
+}
+
 function showEventModal(data) {
 document.getElementById('event-modal').classList.remove('opacity-0', 'invisible');
 document.getElementById('modal-title').textContent = data ? 'Edit Event' : 'New Event';
@@ -831,7 +889,11 @@ document.getElementById('event-category').value = data ? data.category : 'Worshi
 document.getElementById('event-date').value = data ? data.date : '';
 document.getElementById('event-time').value = data ? data.time : '';
 document.getElementById('event-location').value = data ? data.location : '';
-document.getElementById('event-image').value = data ? data.image : '';
+document.getElementById('event-image').value = data && data.image ? data.image : '';
+document.getElementById('event-image-input').value = '';
+const eImgWrap = document.getElementById('event-image-preview-wrap');
+const eImgEl = document.getElementById('event-image-preview');
+if (data && data.image) { eImgEl.src = data.image; eImgWrap.classList.remove('hidden'); } else { eImgWrap.classList.add('hidden'); }
 document.getElementById('event-description').value = data ? data.description : '';
 }
 
@@ -841,13 +903,14 @@ document.getElementById('event-modal').classList.add('opacity-0', 'invisible');
 
 async function saveEvent(event) {
 event.preventDefault();
+const image = await handleImageUpload('event-image-input', 'event-image', 'events');
 const data = {
 title: document.getElementById('event-title').value,
 category: document.getElementById('event-category').value,
 date: document.getElementById('event-date').value,
 time: document.getElementById('event-time').value,
 location: document.getElementById('event-location').value,
-image: document.getElementById('event-image').value || 'https://images.unsplash.com/photo-1473177104440-ffeeccd1d3ef?w=600&q=80',
+image: image || '',
 description: document.getElementById('event-description').value,
 };
 const id = document.getElementById('event-id').value;
@@ -902,7 +965,11 @@ document.getElementById('news-id').value = data ? data.id : '';
 document.getElementById('news-title').value = data ? data.title : '';
 document.getElementById('news-category').value = data ? data.category : 'Church News';
 document.getElementById('news-author').value = data ? data.author : '';
-document.getElementById('news-image').value = data ? data.image : '';
+document.getElementById('news-image').value = data && data.image ? data.image : '';
+document.getElementById('news-image-input').value = '';
+const nImgWrap = document.getElementById('news-image-preview-wrap');
+const nImgEl = document.getElementById('news-image-preview');
+if (data && data.image) { nImgEl.src = data.image; nImgWrap.classList.remove('hidden'); } else { nImgWrap.classList.add('hidden'); }
 document.getElementById('news-excerpt').value = data ? data.excerpt : '';
 document.getElementById('news-content').value = data ? data.content : '';
 }
@@ -913,11 +980,12 @@ document.getElementById('news-modal').classList.add('opacity-0', 'invisible');
 
 async function saveNewsArticle(event) {
 event.preventDefault();
+const image = await handleImageUpload('news-image-input', 'news-image', 'news');
 const data = {
 title: document.getElementById('news-title').value,
 category: document.getElementById('news-category').value,
 author: document.getElementById('news-author').value || 'Admin',
-image: document.getElementById('news-image').value || '',
+image: image || '',
 excerpt: document.getElementById('news-excerpt').value || '',
 content: document.getElementById('news-content').value || '',
 };

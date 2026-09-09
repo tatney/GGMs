@@ -48,4 +48,7 @@ const API = {
   unconfirmDonation(id) { return this.request('PATCH', `/donations/${id}/pending`, {}); },
   deleteDonation(id) { return this.request('DELETE', `/donations/${id}`); },
   getDonationStats() { return this.request('GET', '/donations/stats'); },
+
+  // Uploads
+  uploadImage(dataUrl, folder) { return this.request('POST', '/upload', { folder, dataUrl }); },
 };

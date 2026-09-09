@@ -8,6 +8,7 @@ const submissionRoutes = require('./routes/submissions');
 const eventRoutes = require('./routes/events');
 const newsRoutes = require('./routes/news');
 const donationRoutes = require('./routes/donations');
+const uploadRoutes = require('./routes/upload');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,6 +22,7 @@ app.use('/api/submissions', submissionRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/donations', donationRoutes);
+app.use('/api/upload', uploadRoutes);
 
 initDatabase().catch((err) => {
   console.error('Failed to initialize database:', err);
