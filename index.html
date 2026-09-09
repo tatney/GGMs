@@ -75,8 +75,9 @@ body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#121c2a;-
 <div id="top-bar-placeholder"></div>
 <header class="sticky top-0 z-50 transition-all duration-300" id="main-nav">
 <div class="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-between h-14 md:h-16">
-<div class="flex items-center">
-<img src="https://woficgrivliwuuqtbayi.supabase.co/storage/v1/object/public/images/GG%20lOGO.png" alt="God's Gospel Ministries Logo" class="h-11 md:h-14 w-auto flex-shrink-0 drop-shadow-lg" loading="eager"/>
+<div class="flex items-center gap-2.5">
+<img src="https://woficgrivliwuuqtbayi.supabase.co/storage/v1/object/public/images/GG%20lOGO.png" alt="God's Gospel Ministries Logo" class="h-10 md:h-12 w-auto flex-shrink-0 drop-shadow-lg" loading="eager"/>
+<span class="font-bold text-sm md:text-lg tracking-tight whitespace-nowrap" id="nav-brand">God's Gospel Ministries</span>
 </div>
 <nav class="hidden lg:flex items-center gap-1" id="desktop-nav" aria-label="Main navigation">
 <a href="index.html" class="nav-link px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">Home</a>
@@ -423,6 +424,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 <script src="/api.js"></script>
 <script>
 const nav = document.getElementById('main-nav');
+const brand = document.getElementById('nav-brand');
 const navLinks = document.querySelectorAll('.nav-link, #connect-dropdown button, #menu-btn');
 
 window.addEventListener('scroll', () => {
@@ -430,10 +432,12 @@ if (window.scrollY > 60) {
 nav.classList.add('nav-glass');
 nav.classList.remove('bg-transparent');
 navLinks.forEach(l => { l.classList.add('text-on-surface'); l.classList.remove('text-white'); });
+brand.classList.add('text-primary'); brand.classList.remove('text-white');
 } else {
 nav.classList.remove('nav-glass');
 nav.classList.add('bg-transparent');
 navLinks.forEach(l => { l.classList.remove('text-on-surface'); l.classList.add('text-white'); });
+brand.classList.remove('text-primary'); brand.classList.add('text-white');
 }
 });
 
