@@ -29,30 +29,45 @@ borderRadius: { DEFAULT: "0.5rem", lg: "0.75rem", xl: "1rem", "2xl": "1.5rem" },
 <style>
 *,*::before,*::after{box-sizing:border-box}
 .material-symbols-outlined{font-variation-settings:'FILL'0,'wght'500,'GRAD'0,'opsz'24;vertical-align:middle;font-size:1.25em}
-body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF;color:#121c2a;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;background:#F8FAFC;color:#121c2a;-webkit-font-smoothing:antialiased}
 *:focus-visible{outline:2px solid #1E293B;outline-offset:2px;border-radius:4px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .5s ease both}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
-<body class="bg-surface text-on-surface font-sans min-h-screen flex items-center justify-center p-4">
-<div class="w-full max-w-md">
+<body class="bg-surface text-on-surface font-sans min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute -top-24 -left-24 w-80 h-80 bg-primary-light rounded-full blur-3xl opacity-60"></div>
+<div class="absolute -bottom-24 -right-24 w-80 h-80 bg-accent-light rounded-full blur-3xl opacity-60"></div>
+<div class="absolute top-1/4 right-8 w-24 h-24 bg-holy-light rounded-full blur-2xl"></div>
+</div>
+<div class="w-full max-w-md relative fade-up">
 <div class="text-center mb-8">
-<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined text-white text-3xl">church</span>
+<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary via-primary to-accent-dark flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL'1">church</span>
 </div>
 <h1 class="text-2xl font-extrabold text-on-surface">Admin Login</h1>
 <p class="text-on-surface-variant text-sm mt-1">God's Gospel Ministries</p>
 </div>
-<div class="bg-white rounded-2xl p-8 shadow-lg border border-outline-variant">
+<div class="bg-white rounded-2xl p-8 shadow-xl shadow-slate-200/60 ring-1 ring-outline-variant/60">
 <form id="login-form" onsubmit="handleLogin(event)">
 <div class="mb-5">
 <label class="block font-semibold text-sm text-on-surface-variant mb-1.5" for="username">Username</label>
-<input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Enter username" required type="text" id="username" autocomplete="username"/>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-muted text-lg">person</span>
+<input class="w-full rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 pl-11 pr-4 focus:shadow-md transition-all" placeholder="Enter username" required type="text" id="username" autocomplete="username"/>
+</div>
 </div>
 <div class="mb-6">
 <label class="block font-semibold text-sm text-on-surface-variant mb-1.5" for="password">Password</label>
-<input class="w-full rounded-xl border-outline focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 px-4" placeholder="Enter password" required type="password" id="password" autocomplete="current-password"/>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-muted text-lg">lock</span>
+<input class="w-full rounded-xl border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 py-3 pl-11 pr-4 focus:shadow-md transition-all" placeholder="Enter password" required type="password" id="password" autocomplete="current-password"/>
 </div>
-<button class="w-full bg-gradient-to-br from-primary to-primary-dark text-white py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all shadow-md active:scale-95 flex items-center justify-center gap-2" type="submit">
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-dark text-white py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-all shadow-md active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
 <span class="material-symbols-outlined">login</span> Sign In
 </button>
 </form>
